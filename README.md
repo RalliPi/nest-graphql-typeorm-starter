@@ -15,9 +15,16 @@ This boilerplate features a complete authentication system with:
 * user model
 * authentication guards
 
+
+This project is configured to use sqlite as default database, but it will work with any db supported by nest (check the documentation)
+
+
 The authenticated user gets passed to the context, so it is available in every resolver method.
 
 Graphql playground for testing queries and mutations is running on /graphql
+
+A tutorial on how to use this will be coming soon...
+
 
 ## Installation
 

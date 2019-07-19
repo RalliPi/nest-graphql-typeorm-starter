@@ -42,7 +42,6 @@ export class UserService {
             password = "";
 
         password = await bcrypt.hash(password, 10);
-        console.log(password)
         return await this.userRepository.save(new User(name, password));
     }
 

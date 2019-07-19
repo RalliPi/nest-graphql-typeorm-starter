@@ -4,7 +4,8 @@ import { JwtPayload } from './interfaces/jwt-payload.interface';
 import { Injectable, Post, HttpException, HttpStatus } from '@nestjs/common';
 import { InjectRepository } from '@nestjs/typeorm';
 import { Repository } from 'typeorm';
-import { constants } from 'src/constants';
+import { constants } from '../constants';
+import * as bcrypt from 'bcrypt';
 
 @Injectable()
 export class UserService {
@@ -39,6 +40,9 @@ export class UserService {
         }
         if (password == undefined)
             password = "";
+
+        password = await bcrypt.hash(password, 10);
+        console.log(password)
         return await this.userRepository.save(new User(name, password));
     }
 
@@ -46,6 +50,12 @@ export class UserService {
         if (password == "") {
             throw new HttpException('empty password', HttpStatus.BAD_REQUEST);
         }
-        return await this.userRepository.findOne({ where: { name: name, password: password } });
+        var user = await this.userRepository.findOne({ where: { name: name } });
+        if (user == null) return user;
+        var isValid = await bcrypt.compare(password, user.password)
+        if (isValid) {
+            return user;
+        }
+        return null;
     }
 }

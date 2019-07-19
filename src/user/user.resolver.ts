@@ -15,7 +15,7 @@ export class UserResolver {
     @TQuery()
     @Query()
     @UseGuards(GqlAuthGuard)
-    id(): String {
+    hello(): String {
         return "hello hello"
     }
 

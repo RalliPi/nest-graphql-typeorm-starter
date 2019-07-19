@@ -4,11 +4,11 @@ import { JwtPayload } from './interfaces/jwt-payload.interface';
 import { Injectable, Post, HttpException, HttpStatus } from '@nestjs/common';
 import { InjectRepository } from '@nestjs/typeorm';
 import { Repository } from 'typeorm';
+import { constants } from 'src/constants';
 
 @Injectable()
 export class UserService {
 
-    private readonly secret: string = 'ajhbegvvlbg0987248oezqyaf28g64cxayuftzg';
 
     constructor(
         @InjectRepository(User)
@@ -16,7 +16,7 @@ export class UserService {
     ) { }
 
     createToken(payload: JwtPayload): any {
-        const secretOrKey = 'ajhbegvvlbg0987248oezqyaf28g64cxayuftzg';
+        const secretOrKey = constants.secret;
         const token = jwt.sign(payload, secretOrKey);
         return token;
     }

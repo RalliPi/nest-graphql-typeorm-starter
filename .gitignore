@@ -5,6 +5,8 @@
 
 *.gql
 
+data/
+
 # User-specific stuff:
 .idea/**/workspace.xml
 .idea/**/tasks.xml
@@ -392,3 +394,4 @@ Temporary Items
 docker-compose.yml
 .env
 dist
+data/db.sqlite

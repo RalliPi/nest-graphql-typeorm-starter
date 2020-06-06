@@ -28,7 +28,7 @@
     "@nestjs/platform-express": "^6.0.4",
     "@nestjs/typeorm": "^6.0.0",
     "@nestjs/websockets": "^6.0.4",
-    "apollo-server-express": "^2.4.8",
+    "apollo-server-express": "^2.14.2",
     "bcrypt": "^3.0.6",
     "graphql": "^14.2.1",
     "graphql-tools": "^4.0.4",

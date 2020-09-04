@@ -39,7 +39,7 @@
     "rimraf": "2.6.3",
     "rxjs": "6.4.0",
     "sqlite3": "^4.0.6",
-    "type-graphql": "^0.17.1",
+    "type-graphql": "^0.17.6",
     "typeorm": "^0.2.16"
   },
   "devDependencies": {

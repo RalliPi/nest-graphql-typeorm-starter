@@ -25,7 +25,7 @@
     "@nestjs/graphql": "^6.4.2",
     "@nestjs/microservices": "^6.0.4",
     "@nestjs/passport": "^6.0.0",
-    "@nestjs/platform-express": "^6.0.4",
+    "@nestjs/platform-express": "^6.11.11",
     "@nestjs/typeorm": "^6.0.0",
     "@nestjs/websockets": "^6.0.4",
     "apollo-server-express": "^2.4.8",
